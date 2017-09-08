@@ -1,11 +1,31 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	android:id="@+id/main_player"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:fitsSystemWindows="true">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+	<android.support.v4.widget.DrawerLayout
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/main_drawerlayout"
+		>
 
-</LinearLayout>
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/main"/>
+
+		<android.support.design.widget.NavigationView
+			android:id="@+id/main_leftselectedView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_gravity="start"
+			app:menu="@menu/menu"
+			app:headerLayout="@layout/nav_header_main"/>
+	</android.support.v4.widget.DrawerLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+

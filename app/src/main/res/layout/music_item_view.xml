@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="?android:attr/listPreferredItemHeightSmall"
+	android:orientation="horizontal"
+	android:gravity="center_vertical">
+<View
+	android:layout_width="5dp"
+	android:layout_height="match_parent"
+	android:id="@+id/music_item_view_selected"/>
+	<ImageView
+		android:id="@+id/music_item_view_icon"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:src="@drawable/music"
+		android:scaleType="centerInside"
+		android:layout_marginLeft="10dp"/>
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="wrap_content"
+		android:orientation="vertical"
+		android:layout_weight="1.0"
+		android:gravity="center_vertical"
+		android:layout_marginLeft="10dp">
+
+		<TextView
+			android:singleLine="true"
+			android:id="@+id/music_item_view_title"
+			android:textColor="?android:attr/textColorPrimary"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+		<TextView
+			android:singleLine="true"
+			android:id="@+id/music_item_view_summary"
+			android:textColor="?android:attr/textColorSecondary"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+	</LinearLayout>
+
+	<ImageButton
+		android:id="@+id/music_item_view_more"
+		android:background="?attr/selectableItemBackgroundBorderless"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:src="@drawable/ic_dots_vertical"
+		android:layout_marginRight="15dp"/>
+
+</LinearLayout>
+

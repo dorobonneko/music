@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:gravity="center"
+		android:layout_alignParentBottom="true">
+
+		<TextView
+			android:id="@+id/scanner_view_message"
+			android:textColor="?android:attr/textColorPrimary"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_marginStart="10dp"
+			android:layout_marginEnd="10dp"
+			android:singleLine="true"/>
+		<TextView
+			android:id="@+id/scanner_view_currentPoint"
+			android:textColor="?android:attr/textColorSecondary"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_marginStart="10dp"
+			android:layout_marginEnd="10dp"
+			android:singleLine="true"/>
+		<ProgressBar
+			android:id="@+id/scanner_view_progress"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_margin="10dp"
+			android:visibility="invisible"/>
+
+		<ImageButton
+			android:id="@+id/scanner_view_scanner"
+			android:background="?attr/selectableItemBackgroundBorderless"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/ic_magnify"
+			android:scaleType="centerInside"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
+

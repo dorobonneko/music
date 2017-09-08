@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="horizontal"
+	android:id="@+id/notify_view"
+	android:gravity="center">
+
+	<ImageView
+		android:layout_height="52dp"
+		android:layout_width="52dp"
+		android:src="@drawable/music"
+		android:id="@+id/notify_album"
+		android:scaleType="centerInside"/>
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="wrap_content"
+		android:orientation="vertical"
+		android:layout_weight="1.0"
+		android:gravity="left|center_vertical">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:textSize="17sp"
+			android:singleLine="true"
+			android:id="@+id/notify_title"
+			android:textColor="?android:attr/textColorPrimary"/>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:textSize="13sp"
+				android:id="@+id/notify_artist"
+				android:singleLine="true"
+				android:textColor="?android:attr/textColorSecondary"
+				android:layout_weight="1.0"/>
+
+			<ImageView
+				android:clickable="true"
+				android:foreground="?attr/selectableItemBackgroundBorderless"
+				android:layout_height="42dp"
+				android:layout_width="42dp"
+				android:src="@drawable/ic_chevron_left"
+				android:scaleType="centerInside"
+				android:id="@+id/notify_pre"/>
+
+			<ImageView
+				android:clickable="true"
+				android:foreground="?attr/selectableItemBackgroundBorderless"
+				android:layout_height="42dp"
+				android:layout_width="42dp"
+				android:src="@drawable/ic_play"
+				android:scaleType="centerInside"
+				android:id="@+id/notify_play"/>
+
+			<ImageView
+				android:clickable="true"
+				android:foreground="?attr/selectableItemBackgroundBorderless"
+				android:layout_height="42dp"
+				android:layout_width="42dp"
+				android:src="@drawable/ic_chevron_right"
+				android:scaleType="centerInside"
+				android:id="@+id/notify_next"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<ImageView
+		android:clickable="true"
+		android:foreground="?attr/selectableItemBackgroundBorderless"
+		android:layout_height="42dp"
+		android:layout_width="42dp"
+		android:src="@drawable/ic_close"
+		android:scaleType="centerInside"
+		android:id="@+id/notify_close"/>
+
+</LinearLayout>
+

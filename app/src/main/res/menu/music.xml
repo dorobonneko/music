@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item
+		android:icon="@drawable/ic_label_outline"
+        android:id="@+id/music_local"
+        android:title="本地音乐"/>
+	<item
+		android:icon="@drawable/ic_label_outline"
+        android:id="@+id/music_favourite"
+        android:title="我的最爱"/>
+	<item
+		android:icon="@drawable/ic_label_outline"
+        android:id="@+id/music_sheet"
+        android:title="歌单"/>
+    <item
+		android:icon="@drawable/ic_label_outline"
+        android:id="@+id/music_playhistory"
+        android:title="最近播放"/>
+	<item
+		android:icon="@drawable/ic_label_outline"
+        android:id="@+id/music_addhistory"
+        android:title="最近添加"/>
+	
+</menu>

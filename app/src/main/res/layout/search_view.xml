@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true">
+<android.support.design.widget.AppBarLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="?attr/actionBarSize"
+	app:elevation="0dp"
+	>
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center"
+		android:focusable="true"
+		android:focusableInTouchMode="true">
+
+		<ImageButton
+			android:id="@+id/search_view_siteselet"
+			android:layout_margin="8dp"
+			android:scaleType="centerInside"
+			android:background="?attr/selectableItemBackgroundBorderless"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/wangyi"/>
+
+		<EditText
+			android:id="@+id/search_view_key"
+			android:singleLine="true"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"/>
+
+		<ImageButton
+			android:id="@+id/search_view_search"
+			android:layout_margin="8dp"
+			android:scaleType="centerInside"
+			android:background="?attr/selectableItemBackgroundBorderless"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/ic_magnify"/>
+
+	</LinearLayout>
+
+</android.support.design.widget.AppBarLayout>
+<LinearLayout
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<android.support.v7.widget.RecyclerView
+		android:scrollbarSize="1dp"
+		android:scrollbars="horizontal"
+		android:visibility="gone"
+		android:id="@+id/search_view_sitelist"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"/>
+	<android.support.v4.widget.SwipeRefreshLayout
+		android:id="@+id/search_view_refresh"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+	<android.support.v7.widget.RecyclerView
+		android:scrollbars="vertical"
+		android:id="@+id/search_view_resultlist"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+	</android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

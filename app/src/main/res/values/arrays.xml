@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="listen">
+		<item>试听</item>
+		<item>标准</item>
+		<item>高保真</item>
+		<item>无损</item>
+	</string-array>
+	<string-array name="listen_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+	<string-array name="sleep">
+		<item>5分钟</item>
+		<item>10分钟</item>
+		<item>15分钟</item>
+		<item>30分钟</item>
+		<item>45分钟</item>
+		<item>60分钟</item>
+	</string-array>
+	<string-array name="sleep_cancel">
+		<item>5分钟</item>
+		<item>10分钟</item>
+		<item>15分钟</item>
+		<item>30分钟</item>
+		<item>45分钟</item>
+		<item>60分钟</item>
+		<item>取消睡眠</item>
+	</string-array>
+	<string-array name="wangyi" formatted="false">
+		<item>POST</item>
+		<item>http://music.163.com/api/cloudsearch/pc?type=1&amp;offset=%d&amp;limit=15&amp;s=%s</item>
+		<item>http://music.163.com/api/song/detail?id=%d&amp;ids=[%d]</item>
+		<item>http://music.163.com/api/song/enhance/player/url?ids=[%d]&amp;br=%s</item>
+		<item>320000</item>
+		<item>192000</item>
+		<item>128000</item>
+	</string-array>
+	<string-array name="kugou" formatted="false">
+		<item>GET</item>
+		<item>http://mobilecdn.kugou.com/api/v3/search/song?format=json&amp;pagesize=15&amp;keyword=%s&amp;page=%d</item>
+		<item>http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&amp;hash=%s</item>
+	</string-array>
+	<string-array name="qq" formatted="false">
+		<item>GET</item>
+		<item>http://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%s&amp;p=%d&amp;m=15&amp;format=json</item>
+		<item>http://dl.stream.qqmusic.qq.com/M800%s.mp3?vkey=2DD221A750ED12C60007CAB11548CAE4C73423FB97497C812C5C9066019760BB212333457DCE183027D8923642CAB617FB7E3AA802B0138C&amp;guid=1501761583801&amp;fromtag=30</item>
+		<item>http://dl.stream.qqmusic.qq.com/O600%s.ogg?vkey=2DD221A750ED12C60007CAB11548CAE4C73423FB97497C812C5C9066019760BB212333457DCE183027D8923642CAB617FB7E3AA802B0138C&amp;guid=1501761583801&amp;fromtag=30</item>
+		<item>http://dl.stream.qqmusic.qq.com/M500%s.mp3?vkey=2DD221A750ED12C60007CAB11548CAE4C73423FB97497C812C5C9066019760BB212333457DCE183027D8923642CAB617FB7E3AA802B0138C&amp;guid=1501761583801&amp;fromtag=30</item>
+		<item>http://dl.stream.qqmusic.qq.com/C400%s.m4a?vkey=2DD221A750ED12C60007CAB11548CAE4C73423FB97497C812C5C9066019760BB212333457DCE183027D8923642CAB617FB7E3AA802B0138C&amp;guid=1501761583801&amp;fromtag=30</item>
+		<item>http://isure.stream.qqmusic.qq.com/C100%s.m4a?fromtag=32</item>
+		
+	</string-array>
+	<string-array name="kuwo" formatted="false">
+		<item>GET</item>
+		<item>http://search.kuwo.cn/r.s?all=%s&amp;ft=music&amp;itemset=web_2013&amp;pn=%d&amp;rn=15&amp;rformat=json&amp;encoding=utf8</item>
+		<item>http://player.kuwo.cn/webmusic/st/getNewMuiseByRid?rid=%s</item>
+		<item>http://%s/resource/%s</item>
+	</string-array>
+	<string-array name="xiami" formatted="false">
+		<item>GET</item>
+		<item>http://api.xiami.com/web?key=%s&amp;v=2.0&amp;app_key=1&amp;r=search/songs&amp;page=%d&amp;limit=15</item>
+		<item>http://m.xiami.com/</item>
+		<item>http://www.xiami.com/song/playlist/id/%d/object_name/default/object_id/0/cat/json</item>
+	</string-array>
+	<string-array name="baidu" formatted="false">
+		<item>GET</item>
+		<item>http://tingapi.ting.baidu.com/v1/restserver/ting?from=android&amp;version=5.9.9.1&amp;method=baidu.ting.search.merge&amp;format=json&amp;page_size=15&amp;type=0&amp;query=%s&amp;page_no=%d</item>
+		<item>http://tingapi.ting.baidu.com/v2/restserver/ting?method=baidu.ting.song.play&amp;format=json&amp;songid=%d</item>
+	</string-array>
+	<string-array name="sing5" formatted="false">
+		<item>GET</item>
+		<item>http://search.5sing.kugou.com/home/json?keyword=%s&amp;sort=1&amp;page=%d&amp;filter=0&amp;type=0</item>
+		<item>http://5sing.kugou.com/m/detail/%s-%d-1.html</item>
+	</string-array>
+	<string-array name="migu" formatted="false">
+		<item>GET</item>
+		<item>http://m.music.migu.cn/music-h5/search/searchAll.json?keyword=%s&amp;type=song&amp;pageNo=%d&amp;pageSize=15</item>
+	</string-array>
+	<string-array name="imusic" formatted="false">
+		<item>POST</item>
+		<item>http://3g.imusic.cn/ajax/biz/search/searchAll.ajax?key=%s&amp;page=%d&amp;pageSize=15&amp;stype=1&amp;from=xc</item>
+		<item>http://3g.imusic.cn/catelogue/search/searchAll.jsp?&amp;searchKey=%s&amp;searchType=1</item>
+	</string-array>
+	<string-array name="ting1" formatted="false">
+		<item>GET</item>
+		<item>http://so.1ting.com/song/json?q=%s&amp;page=%d&amp;size=15</item>
+		<item>http://m.1ting.com/file?url=%s</item>
+	</string-array>
+</resources>
