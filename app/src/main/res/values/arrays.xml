@@ -41,7 +41,10 @@
 	<string-array name="kugou" formatted="false">
 		<item>GET</item>
 		<item>http://mobilecdn.kugou.com/api/v3/search/song?format=json&amp;pagesize=15&amp;keyword=%s&amp;page=%d</item>
-		<item>http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&amp;hash=%s</item>
+		<item>http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&amp;hash=%s&amp;from=mkugou</item>
+		<item>http://trackercdnbj.kugou.com/i/v2/?album_id=&amp;version=5201314&amp;pid=2&amp;key=%s&amp;appid=1005&amp;behavior=download&amp;area_code=1&amp;cmd=25&amp;hash=%s&amp;with_res_tag=0</item>
+		<item>http://ioscdn.kugou.com/api/v3/search/song?iscorrect=&amp;pagesize=15&amp;plat=2&amp;tag=1&amp;sver=5&amp;showtype=10&amp;keyword=%s&amp;page=%d&amp;version=8550</item>
+		<item>http://media.store.kugou.com/v1/get_res_privilege</item>
 	</string-array>
 	<string-array name="qq" formatted="false">
 		<item>GET</item>

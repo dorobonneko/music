@@ -11,6 +11,11 @@ import java.util.regex.Matcher;
 import org.json.JSONException;
 import android.text.TextUtils;
 import android.text.StaticLayout;
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.InputStream;
 
 public class MusicParse
 {
@@ -377,34 +382,66 @@ public class MusicParse
 		{
 			PlayItem pi=new PlayItem();
 			JSONObject song_info=array.getJSONObject(i);
-			String hash320=song_info.getString("320hash");
-			String sqhash=song_info.getString("sqhash");
-			String hash=song_info.getString("hash");
+			String[] hashList=new String[]{song_info.getString("320hash"),song_info.getString("sqhash"),song_info.getString("hash")};
 			pi.setArtist(song_info.getString("singername"));
 			pi.setTitle(song_info.getString("songname"));
 			pi.setId(song_info.getInt("audio_id"));
 			List<Song> playList=new ArrayList<>();
-			if (!TextUtils.isEmpty(hash320))
-			{
+			for(String hash:hashList){
+				if(TextUtils.isEmpty(hash))continue;
+				JSONObject info=new JSONObject(StringUtils.getString(String.format(data[3],StringUtils.md5(hash+"kgcloudv2"),hash)));
+				try{
+				JSONArray urls=info.getJSONArray("url");
+				if(urls.length()==0)continue;
 				Song song=new Song();
-				song.setBr(320000);
-				song.setUrl(new JSONObject(StringUtils.getString(String.format(data[2], hash320))).getString("url"));
+				song.setUrl(urls.getString(0));
+				song.setBr(info.getInt("bitRate"));
+				song.setSize(info.getLong("fileSize"));
 				playList.add(song);
+				}catch(JSONException je){}
 			}
-			if (!TextUtils.isEmpty(sqhash))
+			/*JSONObject jo=new JSONObject();
+			jo.put("relate",1);
+			jo.put("userid",0);
+			jo.put("token","");
+			jo.put("behavior","download");
+			jo.put("clientver","5201314");
+			jo.put("appid",1005);
+			jo.put("area_code","1");
+			jo.put("vip",4);
+			JSONObject res=new JSONObject();
+			res.put("id",0);
+			res.put("type","audio");
+			res.put("hash",song_info.getString("hash"));
+			res.put("name",song_info.getString("filename"));
+			res.put("album_id",song_info.getString("album_id"));
+			JSONArray ja=new JSONArray();
+			ja.put(res);
+			jo.put("resource",ja);
+			try
 			{
-				Song song=new Song();
-				song.setBr(192000);
-				song.setUrl(new JSONObject(StringUtils.getString(String.format(data[2], sqhash))).getString("url"));
-				playList.add(song);
+				HttpURLConnection huc=(HttpURLConnection) new URL(data[5]).openConnection();
+				huc.setRequestMethod("POST");
+				huc.setDoOutput(true);
+				OutputStream os=huc.getOutputStream();
+				os.write(jo.toString().getBytes());
+				os.flush();
+				os.close();
+				InputStream is=huc.getInputStream();
+				JSONArray wusun=new JSONObject(StringUtils.getString(is)).getJSONArray("data").getJSONObject(0).getJSONArray("relate_goods");
+				for(int n=0;n<wusun.length();n++){
+					String hash=wusun.getJSONObject(n).getString("hash");
+					JSONObject info=new JSONObject(StringUtils.getString(String.format(data[3],StringUtils.md5(hash+"kgcloudv2"),hash)));
+					JSONArray urls=info.getJSONArray("url");
+					if(urls.length()==0)continue;
+					Song song=new Song();
+					song.setUrl(urls.getString(0));
+					song.setBr(info.getInt("bitRate"));
+					playList.add(song);
+				}
 			}
-			if (!TextUtils.isEmpty(hash))
-			{
-				Song song=new Song();
-				song.setBr(128000);
-				song.setUrl(new JSONObject(StringUtils.getString(String.format(data[2], hash))).getString("url"));
-				playList.add(song);
-			}
+			catch (IOException e)
+			{}*/
 			pi.setPlayList(playList);
 			lpi.add(pi);
 		}
@@ -450,6 +487,7 @@ public class MusicParse
 						Song song_item=new Song();
 						song_item.setUrl(song.getString("url"));
 						song_item.setBr(song.getInt("br"));
+						song_item.setSize(song.getLong("size"));
 						if (song_item.getBr() == 0)break;
 						int index=playList.indexOf(song_item);
 						if (index == -1)

@@ -14,6 +14,7 @@ import com.moe.entity.PlayItem;
 import com.moe.entity.Song;
 import android.content.DialogInterface;
 import com.moe.services.DownloadService;
+import java.text.DecimalFormat;
 public class MusicAdapter extends Adapter<MusicAdapter.ViewHolder>
 {
 	private int selected=-1;
@@ -92,8 +93,9 @@ public class MusicAdapter extends Adapter<MusicAdapter.ViewHolder>
 				final PlayItem pi=(PlayItem)list.get(getAdapterPosition());
 				List<Song> song=pi.getPlayList();
 				String[] items=new String[song.size()];
+				DecimalFormat df=new DecimalFormat("0.00");
 				for(int i=0;i<song.size();i++)
-				items[i]=(song.get(i).getBr()/1000)+"k";
+				items[i]=(song.get(i).getBr()/1000)+"k\t"+df.format(song.get(i).getSize()/1024.0/1024)+"M";
 					ab.setItems(items, new DialogInterface.OnClickListener(){
 
 							@Override

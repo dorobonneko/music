@@ -4,7 +4,17 @@ public class Song
 {
 	private int br;
 	private String url;
+	private long size;
 
+	public void setSize(long size)
+	{
+		this.size = size;
+	}
+
+	public long getSize()
+	{
+		return size;
+	}
 
 	public void setBr(int br)
 	{

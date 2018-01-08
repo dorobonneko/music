@@ -152,7 +152,7 @@ public class SearchActivity extends Activity implements View.OnClickListener,Ada
 				break;
 			case R.drawable.kugou:
 				data = getResources().getStringArray(R.array.kugou);
-				json = StringUtils.getString(String.format(data[1], key, page));
+				json = StringUtils.getString(String.format(data[4], key, page));
 				page++;
 				list = MusicParse.kugou(json, data);
 
